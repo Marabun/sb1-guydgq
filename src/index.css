@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  body {
+    @apply bg-[#f5f5f7] text-[#1d1d1f];
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .input-field {
+    @apply w-full px-4 py-2.5 bg-white/70 backdrop-blur-xl border border-gray-200/80 
+           rounded-xl focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500/30 
+           transition-all duration-200 outline-none shadow-sm text-sm;
+  }
+
+  .input-field::placeholder {
+    @apply text-gray-400 truncate;
+  }
+
+  .button-base {
+    @apply flex items-center justify-center space-x-1.5 px-4 py-2.5 rounded-xl 
+           transition-all duration-200 font-medium text-sm whitespace-nowrap
+           focus:ring-2 focus:ring-offset-2 focus:ring-offset-[#f5f5f7] focus:outline-none;
+  }
+
+  .button-primary {
+    @apply button-base bg-[#1d1d1f] text-white hover:bg-[#313133]
+           focus:ring-[#1d1d1f]/20;
+  }
+
+  .button-secondary {
+    @apply button-base bg-white/70 backdrop-blur-xl border border-gray-200/80 
+           text-[#1d1d1f] hover:bg-white/90 focus:ring-[#1d1d1f]/10;
+  }
+
+  .card {
+    @apply bg-white/70 backdrop-blur-xl border border-gray-200/80 rounded-2xl 
+           shadow-sm transition-all duration-300 w-full hover:shadow-md;
+  }
+
+  .section-title {
+    @apply text-lg font-semibold tracking-tight text-[#1d1d1f];
+  }
+
+  .data-tag {
+    @apply inline-flex items-center gap-2 px-3 py-1.5 bg-gray-50/70 
+           backdrop-blur-sm rounded-lg text-sm border border-gray-100/80
+           transition-all duration-200 hover:bg-gray-100/70;
+  }
+
+  .tag-divider {
+    @apply w-px h-3.5 bg-gray-200/80;
+  }
+
+  .result-label {
+    @apply text-sm text-gray-500 mb-1;
+  }
+
+  .result-value {
+    @apply text-2xl font-semibold;
+  }
+
+  .scenario-card {
+    @apply p-4 bg-gray-50/70 backdrop-blur-sm rounded-xl border border-gray-100/80;
+  }
+}
+
+.animate-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
